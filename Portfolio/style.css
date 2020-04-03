@@ -1,0 +1,243 @@
+body
+{
+  margin: 0;
+  padding: 0;
+  background-color: #636e72;
+}
+
+p
+{
+  font-size: 100%;
+  font-family: 'Cormorant Garamond', serif;
+  color: #fff ;
+}
+ul
+{
+  font-size: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  color: #fff
+}
+h2
+{
+  font-size: 50px;
+  font-family: 'Major Mono Display', monospace;
+  color: #fff ;
+  word-wrap: break-word;
+  writing-mode: vertical-lr;
+}
+
+h6
+{
+  font-size: 15px;
+  font-family: 'Cormorant Garamond', monospace;
+  color: #fff ;
+}
+/* modifiche menu navigazione*/
+.slideshow
+{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.middle
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navigation
+{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.bar
+{
+  width: 70px;
+  height: 20px;
+  /*border: 2px solid #fff;*/ /*debugging*/
+  margin: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+  text-align: center;
+}
+
+.bar:hover
+{
+  background: #fff;
+}
+
+input[name='r']
+{
+  position: absolute;
+  visibility: hidden;
+}
+/* Container delle pagine*/
+.slides
+{
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
+/* Modifiche delle singole pagine(slide)*/
+.slide
+{
+  width: 20%;
+  transition: 0.6s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+    /*border: 1px solid #00FFE0;*/  /*debugging*/
+}
+
+section
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 20px;
+  /*border: 1px solid #FFF865;*/ /*debugging*/
+  width: 30%;
+  height: 30%;
+}
+/* Modifiche dei nomi nel menu navigazione*/
+label
+{
+  font-size: 20px;
+  color: #fff ;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* movimento delle pagine*/
+#r1:checked ~ .s1
+{
+  margin-left: 0;
+}
+
+#r2:checked ~ .s1
+{
+  margin-left: -20%;
+}
+
+#r3:checked ~ .s1
+{
+  margin-left: -40%;
+}
+
+#r4:checked ~ .s1
+{
+  margin-left: -60%;
+}
+
+#r5:checked ~ .s1
+{
+  margin-left: -80%;
+}
+/* Animazione dei BackGround delle varie pagine*/
+.b1
+{
+  background-image: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB );
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 10s ease-in-out infinite;
+}
+.b2
+{
+  background-image: linear-gradient(-45deg,#47CACC, #63BCC9, #CDB3D4, #E7B7C8, #FFBE88);
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 10s ease-in-out infinite;
+}
+.b3
+{
+  background-image: linear-gradient(-45deg,#FF7B89, #8A5082, #6F5F90, #758EB7, #A5CAD2);
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 10s ease-in-out infinite;
+}
+.b4
+{
+  background-image: linear-gradient(-45deg,#85CBCC, #A8DEE0, #F9E2AE, #FBC78D, #A7D676);
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 10s ease-in-out infinite;
+}
+.b5
+{
+  background-image: linear-gradient(-45deg,#478BA2, #DE586D, #E9765B, #F2A490, #B9D4DB);
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 10s ease-in-out infinite;
+}
+
+@keyframes change
+{
+  0% {background-position: 0 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0 50%;}
+}
+
+/* classi riguardanti nome i pagina HOME*/
+.TitoloS1
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.TitoloS1 p
+{
+  font-size:  50px;
+  color: #fff ;
+}
+.TitoloS1 h1
+{
+  font-family: 'Major Mono Display', monospace;
+  font-size:  100px;
+  color: #fff ;
+}
+
+/* Animazione Nome in Schermata Home*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 8s;
+}
+/*Pseudo classi link, modifico i colori dei link in base al loro stato*/
+a:link {
+  color: blue;
+  text-decoration: none;
+}
+a:visited {
+  color: purple;
+}
+a:hover {
+  color: aqua;
+  text-decoration: underline;
+}
+a:active {
+  color: red;
+}
+a:visited:hover {
+  color: orange;
+}
+a:visited:active {
+  color: red;
+}
